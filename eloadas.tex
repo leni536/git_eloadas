@@ -1,6 +1,6 @@
 \input{preambulum.tex}
 
-\newcommand{\git}{\textsc{git}}
+\newcommand{\git}{\textsc{git} }
 
 \title{Bevezetés a \git használatába}
 \author[Szolnoki Lénárd]{Szolnoki Lénárd}
@@ -23,10 +23,60 @@
 
 \section{Bevezetés}
 	\subsection{Motiváció}
+	\begin{frame}
+	  Sokan találkozhattunk a problémával, hogyan tároljuk egy-egy munkánk egy adott időpillanatbeli verzióját.
+	  \begin{itemize}
+	    \item{content.bak}
+	    \item{content.v1}
+	    \item{\dots}
+	  \end{itemize}
+	  
+	  Problémák:
+	  \begin{itemize}
+	    \item{Több fájl konzisztens verziókövetése}
+	    \item{Verziók közötti változások nyomonkövetése}
+	    \item{Kollaboráció}
+	  \end{itemize}
+	\end{frame}
 
-\section{GIT}
-	\subsection{Koncepció, a GIT feladata}
+\section{\git}
+	\subsection{Koncepció, a \git feladata}
+	\begin{frame}
+	  A \git számunkra fontos feladatai:
+	  \begin{itemize}
+	    \item{Egy könyvtárstruktúrában tárolt forrásfájlokban tárolt adatok tárolása}
+	    \item{Jól átlátható verziók közti struktúra}
+	    \item{Többen tudjanak párhuzamosan dolgozni egy adott forráson}
+	  \end{itemize}
+	  Egyéb hasznos tulajdonságok:
+	  \begin{itemize}
+	    \item{Hatékony adattárolás}
+	    \item{Beépített konzisztencia vizsgálat, biztonságos verziókövetés}
+	  \end{itemize}
+	\end{frame}
 	\subsection{Absztrakciók, objektumok}
+	\begin{frame}
+	  Általános objektumok:
+	  \begin{itemize}
+	    \item{tree: egy egész forrásfa képe}
+	    \item{commit: tree + egyéb metaadatok}
+	      \begin{itemize}
+		\item{Szülö azonosító(k) (ezek is commit objektumok)}
+		\item{athor (név, e-mail)}
+		\item{committer (név, e-mail)}
+		\item{Dátum}
+		\item{commit message}
+	      \end{itemize}
+	    \item{branch: egy commitre mutató névvel ellátott cimke}
+	    \item{tag: egy commitre mutató névvel ellátott cimke (Később látjuk a különbséget)}
+	  \end{itemize}
+	  Egyedi objektumok:
+	  \begin{itemize}
+	    \item{HEAD: Az utolsó commitre mutató cimke/aktuális branch-re, a következő szülőjelölt}
+	    \item{index: commitre váró tree}
+	    \item{working directory: munkaterület (homokozó)}
+	  \end{itemize}
+	\end{frame}
 	\subsection{Parancsok}
 	\subsection{Távoli elérés, Github.org}
 
