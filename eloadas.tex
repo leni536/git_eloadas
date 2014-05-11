@@ -55,6 +55,10 @@
 	    \item{Hatékony adattárolás}
 	    \item{Beépített konzisztencia vizsgálat, biztonságos verziókövetés}
 	  \end{itemize}
+	  \begin{figure}
+	    \centering
+	    \includegraphics[width=0.6\linewidth]{gitlogo.pdf}
+	  \end{figure}
 	\end{frame}
 	\subsection{Absztrakciók, objektumok}
 	\begin{frame}
@@ -83,7 +87,7 @@
 	\subsection{Parancsok}
 	\begin{frame}
 	  \frametitle{Parancsok}
-	  Lényegében a \git parancssoros eszközöknek egy nagy halmaza, amik egyenként egy adott verziókövetett könyvtár állapotát tudják manipulálni. A verziókövetett struktúra és állapota a .git nevű könyvtárban található.
+	  Lényegében a \git parancssoros eszközöknek egy nagy halmaza, amik egyenként egy adott lokális verziókövetett könyvtár állapotát tudják manipulálni (a legtöbb az ilyen) vagy egy távoli verziókövetett példánnyal szinkronizál. A verziókövetett struktúra és állapota a .git nevű könyvtárban található.
 
 	  Egy \git parancs felépítése \lstinline|git <parancs> <argumentumok>| alakú, minden egyes parancshoz található részletes dokumentáció \lstinline|man git-<parancs>| módon:
 	  \begin{itemize}
@@ -105,6 +109,32 @@
 		\includegraphics[width=.7\linewidth]{workflow.png}
 	      \end{figure}
 	  \end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	  \frametitle{További parancsok}
+	  \begin{itemize}
+	    \item \lstinline|branch|: branch létrehozása az aktuális HEAD-re.
+	    \item \lstinline|checkout|: egy adott branch állapotára való áttérés.
+	    \item \lstinline|merge|: commit-ek összeollózása.
+	  \end{itemize}
+	  Miért érdemes brancheket csinálni?
+	  \begin{itemize}
+	    \item Egy-egy nagyobb lélegzetvételű változtatást érdemes egy gondolati egységként kezelni, de nem célszerű egyetlen commit-ba sűríteni.
+	    \item Egy nagyobb lélegzetvételű változtatás közben nem biztos hogy egy darabig lesz fordítható, futtatható verziónk. Közben előtérbe kerülhet nagy prioritású kis változtatás a jelenleg futtatható verzión.
+	  \end{itemize}
+	  A \git magic: merge.
+	  \begin{itemize}
+	    \item{Kitalálja, hogy mik voltak a független változtatások két commit között a legközelebbi közös őstől számolva és összeollózza őket.
+	      Ez teszi lehetővé, hogy többen is dolgozzanak egy dokumentumon egyszerre.}
+	  \end{itemize}
+	\end{frame}
+	\begin{frame}
+	  \frametitle{Összetettebb munkamenet}
+	  \begin{figure}
+	    \centering
+	    \includegraphics[width=\linewidth]{gitflow.png}
+	  \end{figure}
 	\end{frame}
 	\subsection{Távoli elérés, Github.org}
 
