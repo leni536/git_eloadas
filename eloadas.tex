@@ -137,6 +137,29 @@
 	  \end{figure}
 	\end{frame}
 	\subsection{Távoli elérés, Github.org}
+	\begin{frame}
+	  \frametitle{Távoli elérés, Github.org}
+	  A távoli elérést a legegyszerűbben a githubon tudjuk kipróbálni.
+	  A githubon az ingyenes accountok csak nyilvános repo-kat tudnak létrehozni.
+	  \begin{itemize}
+	    \item Hozzunk létre egy github accountot
+	    \item Hozzunk létre egy repo-t
+	    \item Kezdhetjük üres repo-val vagy létrehozhatunk egyet egy már a saját gépünkön meglévővel.
+	  \end{itemize}
+	  Általában (kisebb projektek) egy adott projekt-hez van egy központi repo amit egy felhasználó tart karban.
+	  A többiek ezt a repot "fork"-olják.
+	  A változtatási javaslataikat "pull request"-ekben közlik, amiről a karbantartó eldönti, hogy elfogadja-e.
+	\end{frame}
+	\begin{frame}
+	  \frametitle{Munkamenet}
+	  Először fork-olom a repo-t, amihez hozzá akarok járulni, majd \lstinline+git clone+-nal lemásolom a számítógépemre.
+	  
+	  \begin{itemize}
+	    \item Készítek egy branchet a változtatásaimhoz.
+	    \item Amikor elkészültem akkor felteszem a githubra (\lstinline+git push+)
+	    \item Küldök a karbantartónak egy pull requestet a githubon belül.
+	  \end{itemize}
+	\end{frame}
 
 \section{Gyakorlás, szituációk}
 	\subsection{merge konfliktus}
